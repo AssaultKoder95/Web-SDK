@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Teamchat</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+		<!--The chat logo on click of which teamchat will be launched-->				
+        <div class="fixed">
+            <a href="javascript:launchTeamchat();">
+            <img id="logodiv" src="https://s3.amazonaws.com/teamchat-js-sdk/logo.png" style="position:fixed;bottom:10px;right:150px;width:24px;height:24px" />
+            </a>
+        </div>
+
+		<!--The DIV inside which the Teamchat will be loaded-->		
+        <div id="chatdiv" style="display:none;position:fixed;bottom:40px; right:32px; width:280px; height:450px; border:1px solid #00A2E8;">
+        </div>
+
+		<!--This is the  teamchat Javascript SDK-->
+        <script src="https://s3.amazonaws.com/teamchat-js-sdk/teamchat_sdk_1.0.js"></script>
+		
+        <script type="text/javascript">	
+			// This can also be included in document onload
+			api.init("qvOXH467981093","37529");
+		
+			//function called on click of teamchat logo;
+			function launchTeamchat(){
+				document.getElementById("chatdiv").style.display="inline";
+				//Embeds the room list in the chatdiv
+				api.embedroomlist("chatdiv");  
+			}		
+        </script>
+    </body>
+</html>
